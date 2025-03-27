@@ -1,7 +1,7 @@
 // src/pages/Teams.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import supabase from "../lib/supabase";
+import supabase from "../../lib/supabase";
 import { nanoid } from "nanoid"; // or remove if not needed
 
 // Generate a short unique invite code

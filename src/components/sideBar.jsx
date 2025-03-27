@@ -1,17 +1,38 @@
 // src/components/Navbar.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../css/navbar.css"; // Assuming you have some CSS for styling
+import supabase from "../lib/supabase"; // adjust path as needed
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const [userRole, setUserRole] = useState(null);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
+
+  useEffect(() => {
+    async function fetchUserRole() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("role")
+          .eq("id", user.id)
+          .single();
+  
+        if (profile?.role) {
+          setUserRole(profile.role);
+        }
+      }
+    }
+  
+    fetchUserRole();
+  }, []);
 
   return (
     <>
@@ -56,10 +77,17 @@ export default function Navbar() {
           </Link>
           </li>
           <li>
-            <Link to="/leaderboard" onClick={() => setDrawerOpen(false)}>
+            <Link to="/admin/leagues" onClick={() => setDrawerOpen(false)}>
               Leaderboard
             </Link>
           </li>
+          {userRole === "admin" && (
+            <li>
+              <Link to="/admin/Adminleagues" onClick={() => setDrawerOpen(false)}>
+                Admin Leagues
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </>

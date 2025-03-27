@@ -1,7 +1,7 @@
 // src/pages/TeamDetail.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import supabase from "../lib/supabase";
+import supabase from "../../lib/supabase";
 import emailjs from "emailjs-com";
 
 export default function TeamDetail() {

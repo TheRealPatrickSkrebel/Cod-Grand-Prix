@@ -7,9 +7,9 @@ import Sidebar from "./components/sideBar";
 import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
-import Teams from "./pages/Teams";
-import TeamDetail from "./pages/TeamDetail";
-import Matches from "./pages/Matches";
+import Teams from "./pages/teams/Teams";
+import TeamDetail from "./pages/teams/TeamDetail";
+import Matches from "./pages/league/Matches";
 import NotFound from "./pages/NotFound";
 
 import ConfirmEmail from "./pages/confirmEmail";
@@ -19,12 +19,25 @@ import Profile from "./pages/auth/profile";
 import Rules from "./pages/rules";
 import Invite from "./pages/Invite";
 
+import AdminLeagues from "./pages/league/AdminLeagues"
+import League from "./pages/league/Leagues"
+
+import AdminRoute from "./components/AdminRoute";
+
+
 // Example: Protected Route wrapper
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
-  // If no token, redirect to Login
-  return token ? children : <Navigate to="/login" />;
+  // If no token, redirect
+  if (!token) return <Navigate to="/login" />;
+
+  // ... also fetch the user and check if role === admin. 
+  // If not admin, redirect or display "Forbidden" message
+  // Or create a separate AdminRoute if you prefer.
+  
+  return children;
 }
+
 
 export default function App() {
   return (
@@ -41,6 +54,8 @@ export default function App() {
 
           <Route path="/rules" element={<Rules />} />
           <Route path="/invite/:token" element={<Invite />} />
+
+          <Route path="/admin/leagues" element={<League />} />
 
           {/* Protected routes require a valid token */}
           <Route
@@ -67,6 +82,16 @@ export default function App() {
               </PrivateRoute>
             }
           />
+
+          <Route
+            path="/admin/adminleagues"
+            element={
+              <AdminRoute>
+                <AdminLeagues />
+              </AdminRoute>
+            }
+          />
+
 
           {/* Catch-all for undefined routes */}
           <Route path="*" element={<NotFound />} />

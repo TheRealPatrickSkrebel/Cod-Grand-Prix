@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 import React, { useState } from "react";
-import "../css/Home.css"; // We'll define some basic styling/animations in Home.css
+import "../css/home.css"; // We'll define some basic styling/animations in Home.css
 
 export default function Home() {
   const [showDetails, setShowDetails] = useState(false);

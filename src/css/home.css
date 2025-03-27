@@ -1,0 +1,55 @@
+/* src/pages/Home.css */
+
+.home-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* A button to reveal/hide details */
+  .learn-more-btn {
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    background-color: #007bff;  /* a simple blue background */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* The hidden details container */
+  .details-container {
+    margin-top: 2rem;
+  
+    /* Start hidden and fully transparent */
+    max-height: 0;
+    opacity: 0;
+  
+    /* Smooth transitions for height and opacity */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+  }
+  
+  /* When "open" class is applied, show details */
+  .details-container.open {
+    max-height: 500px; /* a large enough height to accommodate your content */
+    opacity: 1;
+  }
+  
+  /* Additional styling for the content inside details */
+  .details-container h2 {
+    margin-top: 0;
+  }
+  
+  .details-container ol {
+    text-align: left; /* better alignment for a list */
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  

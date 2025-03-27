@@ -1,0 +1,70 @@
+/* src/components/Navbar.css */
+
+/* The hamburger (drawer-toggle) icon at the top-left corner */
+.drawer-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10001; /* ensure it's above the drawer */
+}
+
+/* The drawer container, positioned off-screen by default */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh; /* full height */
+  background: #f0f0f0;
+  transform: translateX(-250px); /* hide off to the left */
+  transition: transform 0.3s ease; /* smooth slide effect */
+  overflow-y: auto;
+  z-index: 10000; /* just below the toggle button */
+  padding: 1rem;
+}
+
+/* When the drawer is open, slide in to the left = 0 */
+.drawer.open {
+  transform: translateX(0);
+}
+
+/* Close (X) button inside the drawer */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+}
+
+/* List styling */
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem; /* some spacing below close button */
+}
+
+.drawer li {
+  margin-bottom: 1rem;
+}
+
+/* Basic link / button styling inside the drawer */
+.drawer a,
+.drawer button {
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+.drawer a:hover,
+.drawer button:hover {
+  text-decoration: underline;
+}

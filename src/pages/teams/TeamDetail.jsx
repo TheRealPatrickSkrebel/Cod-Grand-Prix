@@ -95,7 +95,7 @@ export default function TeamDetail() {
         });
       if (inviteError) throw inviteError;
 
-      const inviteLink = `http://localhost:5173/invite/${token}`;
+      const inviteLink = `https://codgrandprix.vercel.app//invite/${token}`;
 
       const templateParams = {
         to_email: inviteEmail,

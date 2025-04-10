@@ -1,0 +1,87 @@
+/* Hamburger icon (drawer toggle) */
+.drawer-toggle {
+  position: fixed;
+  top: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10001;
+  color: #fff;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+
+/* Sidebar (drawer) */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: #2c2c2c;
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 10000;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Show drawer */
+.drawer.open {
+  transform: translateX(0);
+}
+
+/* Close button inside drawer */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  float: right;
+  cursor: pointer;
+}
+
+/* Drawer Links */
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+}
+
+.drawer li {
+  margin-bottom: 1.5rem;
+}
+
+.drawer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.drawer a:hover {
+  color: #00c4ff;
+  text-decoration: underline;
+}
+
+/* Header-right for optional quick links or user info */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Optional: Make drawer responsive */
+@media (max-width: 600px) {
+  .drawer {
+    width: 100%;
+  }
+
+  .drawer-toggle {
+    font-size: 1.8rem;
+  }
+}

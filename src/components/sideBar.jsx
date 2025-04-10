@@ -1,8 +1,9 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../css/navbar.css"; // Assuming you have some CSS for styling
+import "../css/sidebar.css"; // Assuming you have some CSS for styling
 import supabase from "../lib/supabase"; // adjust path as needed
+
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -45,6 +46,8 @@ export default function Navbar() {
         >
           ☰
         </button>
+
+
 
         {/* Some space to the right for quick links or nothing – your choice */}
         <div className="header-right">

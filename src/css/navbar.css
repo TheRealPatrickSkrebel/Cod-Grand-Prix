@@ -1,70 +1,76 @@
-/* src/components/Navbar.css */
+.navbar {
+    background-color: #1f1f1f;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #444;
+  }
+  
+  .navbar-left {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    height: 40px;
+    width: auto;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-right a:hover {
+    color: #00c4ff;
+  }
+  
+  .navbar-right button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-right button:hover {
+    background-color: #e60000;
+  }
+  
+  .navbar-logo {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+  }
+  
+  .navbar-logo:hover {
+    transform: scale(1.05);
+  }
 
-/* The hamburger (drawer-toggle) icon at the top-left corner */
-.drawer-toggle {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10001; /* ensure it's above the drawer */
-}
-
-/* The drawer container, positioned off-screen by default */
-.drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100vh; /* full height */
-  background: #f0f0f0;
-  transform: translateX(-250px); /* hide off to the left */
-  transition: transform 0.3s ease; /* smooth slide effect */
-  overflow-y: auto;
-  z-index: 10000; /* just below the toggle button */
-  padding: 1rem;
-}
-
-/* When the drawer is open, slide in to the left = 0 */
-.drawer.open {
-  transform: translateX(0);
-}
-
-/* Close (X) button inside the drawer */
-.close-button {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  float: right;
-  cursor: pointer;
-}
-
-/* List styling */
-.drawer ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 3rem; /* some spacing below close button */
-}
-
-.drawer li {
-  margin-bottom: 1rem;
-}
-
-/* Basic link / button styling inside the drawer */
-.drawer a,
-.drawer button {
-  background: none;
-  border: none;
-  font: inherit;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: #333;
-}
-
-.drawer a:hover,
-.drawer button:hover {
-  text-decoration: underline;
-}
+  .profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 1.5rem;
+  }
+  
+  

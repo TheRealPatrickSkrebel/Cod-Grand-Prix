@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <h1>Welcome to COD Grand Prix</h1>
+      <h1>Welcome to NULLZONE</h1>
       <p>
         Create or join teams, schedule matches, track standings, and compete
         in playoffs.
